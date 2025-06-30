@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aplicação com Exemplos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Aplicação com Exemplos em JavaScript</h1>
+
+  <div id="botoes-container">
+    <button onclick="exemplo1()">Exemplo 1 - Formulário para salvar TXT</button>
+    <button onclick="exemplo2()">Exemplo 2 - Jogo da Média</button>
+    <button onclick="exemplo3()">Exemplo 3 - Soma dos Números</button>
+  </div>
+
+  <form id="formulario" style="display:none;">
+    <label for="valor1">Valor 1:</label>
+    <input type="text" id="valor1" required>
+
+    <label for="valor2">Valor 2:</label>
+    <input type="text" id="valor2" required>
+
+    <label for="valor3">Valor 3:</label>
+    <input type="text" id="valor3" required>
+
+    <label for="valor4">Valor 4:</label>
+    <input type="text" id="valor4" required>
+
+    <label for="valor5">Valor 5:</label>
+    <input type="text" id="valor5" required>
+
+    <div class="botoes-form">
+      <button type="button" onclick="mostrarResultado()">Mostrar Resultado</button>
+      <p></p>
+      <button type="button" onclick="salvarTXT()">Salvar em TXT</button>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 40px;
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#botoes-container {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 28px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 10px 10px 0;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+form#formulario {
+  background-color: white;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #aaa;
+  width: 320px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form#formulario label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+form#formulario input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+form#formulario input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.botoes-form {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.botoes-form button {
+  width: 140px;
+  margin: 0 10px;
+  background-color: #4caf50;
+}
+
+.botoes-form button:hover {
+  background-color: #3e8e41;
+}
