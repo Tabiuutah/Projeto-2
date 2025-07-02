@@ -1,85 +1,62 @@
-function esconderFormulario() {
-  const form = document.getElementById('formulario');
-  form.style.display = 'none';
-  for (let i = 1; i <=5; i++) {
-    document.getElementById(`valor${i}`).value = '';
-  }
-}
-
-function validarNumero(valor) {
-  return /^-?\d+(\.\d+)?$/.test(valor.trim());
-}
-
 
 function exemplo1() {
-  esconderFormulario();
-  document.getElementById('formulario').style.display = 'block';
-}
+  ﻿alert('Seja bem-vindo ao nosso jogo!');
 
-function mostrarResultado() {
-  const valores = [];
-  for(let i = 1; i <= 5; i++) {
-    const val = document.getElementById(`valor${i}`).value.trim();
-    if (!validarNumero(val)) {
-      alert(`Por favor, digite um número válido no campo Valor ${i}.`);
-      return;
-    }
-    valores.push(parseFloat(val));
+  let numeroSecreto = 5;
+  console.log(numeroSecreto); 
+  let chute;
+  let tentativas = 0; 
+
+  while (chute != numeroSecreto) {
+  chute = parseInt(prompt('Escolha um número entre 1 e 10'));
+  tentativas++; 
+
+  if (chute == numeroSecreto) {
+    alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
+  } else if (chute > numeroSecreto) {
+    alert(`O número secreto é menor que ${chute}. Tente novamente.`);
+  } else {
+    alert(`O número secreto é maior que ${chute}. Tente novamente.`);
   }
-  const soma = valores.reduce((a,b) => a + b, 0);
-  alert(`A soma dos valores é: ${soma.toFixed(2)}`);
 }
-
-
-function salvarTXT() {
-  const valores = [];
-  for(let i = 1; i <= 5; i++) {
-    const val = document.getElementById(`valor${i}`).value.trim();
-    if (!validarNumero(val)) {
-      alert(`Por favor, digite um número válido no campo Valor ${i}.`);
-      return;
-    }
-    valores.push(val);
-  }
-  const conteudo = valores.map((v,i) => `Valor ${i+1}: ${v}`).join('\n');
-  const blob = new Blob([conteudo], {type: 'text/plain;charset=utf-8'});
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'valores.txt';
-  link.click();
 }
 
 
 function exemplo2() {
-  document.getElementById('formulario').style.display = 'none';
-  let qtd = prompt("Quantos números?");
-  if (!qtd || isNaN(qtd) || qtd <= 0) {
-    alert("Número inválido");
-    return;
-  }
+alert("Bem-vindo ao Jogo da Média!");
 
+let quantidade = prompt("Quantos números você quer digitar?");
+quantidade = Number(quantidade);
+
+if (quantidade <= 0 || quantidade === null || quantidade === "" || typeof quantidade !== "number") {
+  alert("Quantidade inválida. Tente novamente com um número maior que zero.");
+} else {
   let soma = 0;
-  for (let i = 1; i <= qtd; i++) {
-    let num = prompt(`Digite o ${i}º número:`);
-    while (!num || isNaN(num)) {
-      num = prompt(`Número inválido. Digite o ${i}º número novamente:`);
+
+  for (let i = 1; i <= quantidade; i++) {
+    let entrada = prompt(`Digite o ${i}º número:`);
+    let numero = Number(entrada);
+
+    if (entrada.trim() === "" || entrada === null || isNaN(numero)) {
+      alert("Valor inválido. Digite um número.");
+      i--; 
+      continue;
     }
-    soma += parseFloat(num);
+
+    soma += numero;
   }
 
-  let media = soma / qtd;
-  alert("Média: " + media.toFixed(2));
-}
+  let media = soma / quantidade;
+
+  alert(`A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(2)}`);
+}}
 
 function exemplo3() {
-  document.getElementById('formulario').style.display = 'none';
-  let n1 = prompt("Número 1:");
-  let n2 = prompt("Número 2:");
-  if (!n1 || !n2 || isNaN(n1) || isNaN(n2)) {
-    alert("Número inválido!");
-    return;
-  }
-  alert("Soma: " + (parseFloat(n1) + parseFloat(n2)));
+  let num1 = parseInt(prompt("Digite o primeiro número inteiro:"));
+  let num2 = parseInt(prompt("Digite o segundo número inteiro:"));
+
+  let resultado = num1 + num2;
+  alert("A soma dos números é: " + resultado);
 }
 
 
